@@ -1,7 +1,8 @@
 resource_registry:
   "MCP2::NetworkAcc": ../fragments/NetworkAccVM.yaml
   "MCP2::NetworkAccStorage": ../fragments/NetworkAccVMStorage.yaml
-  "MCP2::NetworkPrvFl": ../fragments/NetworkPrvFlVSRX.yaml
+  # "MCP2::NetworkPrvFl": ../fragments/NetworkPrvFlVSRX.yaml
+  "MCP2::NetworkPrvFl": ../fragments/NetworkPrvFl.yaml
   "MCP2::SrvInstances": ../fragments/SrvInstancesVM.yaml
   "MCP2::SrvInstancesCeph": ../fragments/SrvInstancesVMCeph.yaml
   "MCP2::SrvInstancesCephOSD": ../fragments/SrvInstancesVMCephOSD.yaml
@@ -12,7 +13,7 @@ parameters:
   # docker_ee_url: ''
   # Set the ssh public key for instances
   # cluster_public_key
-  image: bionic-server-cloudimg-amd64-20190612
+  image: bionic-server-cloudimg
   ucp_flavor: system.compact.openstack.control # ram: 16384, vcpus: 16, ephemeral: 100
   masters_flavor: system.compact.openstack.control # ram: 16384, vcpus: 16, ephemeral: 100
   workers_flavor: system.compact.openstack.control # ram: 16384, vcpus: 16, ephemeral: 100
@@ -20,7 +21,7 @@ parameters:
   lmas_flavor: system.compact.stacklight.server # ram: 16384, vcpus: 12, ephemeral: 120
   osds_flavor: system.virtual.ceph.osd # ram: 8192, vcpus: 4, ephemeral: 100
   ntws_flavor: system.compact.opencontrail.control # ram: 16384, vcpus: 8, ephemeral: 50
-  public_net_id: public
+  public_net_id: floating  # 03708997-16bd-43d8-9b51-24e3b3d6a759
   masters_size: 2
   worker_size: 3
   cmp_size: 2
